@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // determine selector for respective target-textarea
         let targetSel = '#to-' + (data.todo === 'encrypt' ? 'decrypt-' : 'encrypt-') + data.crypto;
 
-        // make sure crypto-method is known
+        // ignore this textarea if specified crypto-method is unknown
         if(!window[data.crypto]) {
             console.error('crypto-method "%s" not found!', data.crypto);
             return false;
         }
 
-        // fill attributes id and placeholder of this textarea
-        ta.id = 'to-' + data.todo + '-' + data.crypto;
-        ta.placeholder = data.todo + ' using ' + data.crypto;
+        // populate id and placeholder attributes of this textarea
+        ta.setAttribute('id', 'to-' + data.todo + '-' + data.crypto);
+        ta.setAttribute('placeholder', data.todo + ' using ' + data.crypto);
 
         // attach listener for input-events that prints en-/decrypted content to target textarea
         ta.addEventListener('input', () => {
