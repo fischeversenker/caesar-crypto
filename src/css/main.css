@@ -45,12 +45,13 @@ section > p {
     padding: 20px;
     max-width: 70%;
     margin: 0 auto;
+    text-align: left;
 }
 
 textarea {
     color: var(--base00);
     background-color: var(--base01);
-    width: calc(50% - 26px);
+    width: 40%;
     min-height: 100px;
     padding: 7px;
     margin: 20px 7px;
