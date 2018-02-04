@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // loop over all textareas with [data-crypto]-attribute
     // [data-crypto] specifies algorithm to use, [data-todo] specifies direction in which to crypt
     Array.from(document.querySelectorAll('textarea[data-crypto]')).forEach(ta => {
-        // get data from this textaera
+        // get data for this textaera
         let data = ta.dataset;
         // determine selector for respective target-textarea
         let targetSel = '#to-' + (data.todo === 'encrypt' ? 'decrypt-' : 'encrypt-') + data.crypto;
